@@ -24,7 +24,7 @@ class Matricula(Base):
         primary_key=True,
         index=True
     )
-    student_id = Column(
+    estudante_id = Column(
         Integer,
         ForeignKey("estudante.id")
     )
