@@ -2,9 +2,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql://postgres:postgres@localhostt/escola"
+DATABASE_URL = "postgresql://postgres:postgres@localhost/escola"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
 
-base = declarative_base
+base = declarative_base()

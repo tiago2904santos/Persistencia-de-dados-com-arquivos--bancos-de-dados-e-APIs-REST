@@ -5,12 +5,12 @@ import models
 import schemas
 from database import SessionLocal, engine
 
-models.Base.metadata.create_all(bind=engine)
+models.base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 def get_db():
-    db = SessionLocal
+    db = SessionLocal()
     try:
         yield db
     finally:
@@ -29,6 +29,6 @@ def create_student(
     return db_student
 
 @app.get("/estudantes/", response_model=List[schemas.EstudanteResponse])
-def read_students(db: Session = Depends(get_db())):
+def read_students(db: Session = Depends(get_db)):
     students = db.query(models.Estudante).all()
     return students

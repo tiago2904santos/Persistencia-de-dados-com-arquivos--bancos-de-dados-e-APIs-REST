@@ -1,13 +1,13 @@
 from sqlalchemy import \
     Column, Integer, String, ForeignKey
-from database import Base 
+from database import base 
 
-class Estudante(Base):
+class Estudante(base):
     __tablename__ = "estudante"
     id = Column(
         Integer,
         primary_key=True,
-        Index=True
+        index=True
     )
     
     nome = Column(
@@ -17,7 +17,7 @@ class Estudante(Base):
 
     idade = Column(Integer)
 
-class Matricula(Base):
+class Matricula(base):
     __tablename__ = "Matriculas"
     id = Column(
         Integer,
